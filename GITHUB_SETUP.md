@@ -28,7 +28,7 @@ cp .env.example .env
 
 Edit `.env` with your real credentials:
 ```env
-MONGODB_URI=mongodb+srv://fernandesjosna126:E20CR1gveS3TgLgO@cluster0.vvcigzg.mongodb.net/
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/YOUR_DATABASE
 EMAIL_USER=your-actual-email@gmail.com
 EMAIL_PASSWORD=your-actual-app-password
 ```

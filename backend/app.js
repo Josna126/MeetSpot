@@ -26,7 +26,13 @@ app.get("/home", (req, res) => {
 
 const start = async() => {
     // Use environment variable for MongoDB connection
-    const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://fernandesjosna126:E20CR1gveS3TgLgO@cluster0.vvcigzg.mongodb.net/";
+    const MONGODB_URI = process.env.MONGODB_URI;
+    
+    if (!MONGODB_URI) {
+        console.error("ERROR: MONGODB_URI environment variable is not set!");
+        console.error("Please create a .env file in the backend directory with your MongoDB connection string.");
+        process.exit(1);
+    }
     
     const connectionDb = await mongoose.connect(MONGODB_URI);
     console.log(`MONGO Connected DB Host: ${connectionDb.connection.host}`);
